@@ -3,11 +3,13 @@ import {RouteHandler} from 'react-router';
 
 export default React.createClass({
     render: function() {
+        return (
 /* jshint ignore:start */
-        return (<h2>Blah
+            <section>
+                <h2>Sourcemap Reader</h2>
                 <RouteHandler />
-                </h2>);
+            </section>
 /* jshint ignore:end */
+        );
     }
 })
-

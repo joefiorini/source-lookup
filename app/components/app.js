@@ -12,6 +12,7 @@ export default React.createClass({
 /* jshint ignore:start */
       <div className="container">
         <h1>App</h1>
+        <Link to="new">Upload Sourcemap</Link>
         <RouteHandler />
       </div>
 /* jshint ignore:end */
