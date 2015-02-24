@@ -1,16 +1,21 @@
 /** @jsx React.DOM */
-var Router = require('react-router');
-var Routes = Router.Routes
-var Route = Router.Route;
-var React = require('react');
+import {Route, DefaultRoute} from 'react-router';
+import React from 'react';
+
+import Placeholder from '../components/__placeholder__';
+import SourceMap from '../components/source-map';
+import App from '../components/app';
+
 
 module.exports = (
-  <Routes location="history">
-    <Route handler={require('../components/app')}>
-      <Route name="foo" handler={require('../components/foo')} />
-      <Route name="bar" path="/what/evz" handler={require('../components/bar')} />
-      <Route name="index" path="/" handler={require('../components/index')} />
+/* jshint ignore:start */
+    <Route handler={App}>
+      <DefaultRoute name="new" handler={Placeholder} />
+      <Route name="sourceMap" handler={SourceMap}>
+        <Route name="show" path="/:path" handler={Placeholder} />
+      </Route>
+      <Route name="sourceLocation" path="/:path/:line,:column" handler={Placeholder} />
     </Route>
-  </Routes>
+/* jshint ignore:end */
 );
 
